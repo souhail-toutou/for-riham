@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مفاجأة ليك يا ريهام 💌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--rose:#f7c6d0;--blush:#fde4e8;--cream:#fff6ec;--gold:#c9a24b;--wine:#6b2340;--deep:#d94b6e}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{min-height:100%}
+body{font-family:'Tajawal','Segoe UI',Tahoma,sans-serif;color:var(--wine);line-height:1.8;overflow-x:hidden;
+background:radial-gradient(circle at 15% 10%,#ffd9e1 0,transparent 45%),radial-gradient(circle at 85% 90%,#ffe9c9 0,transparent 45%),var(--cream);background-attachment:fixed}
+#fx{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.fh{position:absolute;bottom:-30px;color:var(--deep);opacity:.0;animation:rise linear forwards}
+@keyframes rise{10%{opacity:.5}100%{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+.screen{display:none;position:relative;z-index:2;min-height:100dvh;padding:28px 18px;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.screen.active{display:flex;animation:fin .8s ease both}
+@keyframes fin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.card{width:100%;max-width:440px;padding:32px 24px;border-radius:32px 32px 32px 8px;background:rgba(255,255,255,.55);
+backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.9);box-shadow:0 18px 50px rgba(217,75,110,.18),inset 0 0 0 1px rgba(201,162,75,.25)}
+h1,h2{font-family:'Aref Ruqaa',serif;font-weight:700;line-height:1.5}
+h1{font-size:2.3rem}h2{font-size:1.8rem;margin-bottom:18px}
+p{font-size:1.1rem;margin-bottom:22px}
+.big{font-size:3.4rem;display:block;animation:beat 1.6s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+.btn{font:700 1.15rem 'Tajawal',sans-serif;color:#fff;border:0;border-radius:999px;padding:14px 32px;cursor:pointer;
+background:linear-gradient(135deg,#e8708f,var(--deep));box-shadow:0 8px 24px rgba(217,75,110,.4);transition:transform .2s}
+.btn:active{transform:scale(.95)}
+.glow{animation:glow 2s infinite}
+@keyframes glow{0%,100%{box-shadow:0 8px 24px rgba(217,75,110,.4)}50%{box-shadow:0 0 0 6px rgba(201,162,75,.25),0 8px 34px rgba(217,75,110,.7)}}
+.btn.alt{background:#fff;color:var(--wine);box-shadow:0 6px 18px rgba(107,35,64,.15);border:1px solid var(--gold)}
+.row{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;min-height:120px;position:relative}
+.opts{display:grid;gap:12px}
+.opt{font:500 1.1rem 'Tajawal',sans-serif;color:var(--wine);background:#fff;border:1px solid var(--rose);border-radius:18px;padding:13px;cursor:pointer;transition:.2s}
+.opt:active{background:var(--blush);transform:scale(.97)}
+#dodge{position:relative;transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+#toast{position:fixed;z-index:20;inset-inline:18px;top:38%;max-width:380px;margin:auto;padding:22px;border-radius:24px;background:rgba(255,255,255,.92);
+border:1px solid var(--gold);box-shadow:0 20px 60px rgba(107,35,64,.3);font-size:1.15rem;font-weight:500;opacity:0;pointer-events:none;transform:scale(.8);transition:.3s}
+#toast.on{opacity:1;transform:scale(1);pointer-events:auto}
+.meter{height:20px;border-radius:99px;background:#fff;border:1px solid var(--rose);overflow:hidden;margin:6px 0 4px}
+#fill{height:100%;width:0;background:linear-gradient(90deg,#f7a1b5,var(--deep),var(--gold));transition:width .4s}
+#heart{font-size:5.5rem;background:none;border:0;cursor:pointer;margin:14px 0;filter:drop-shadow(0 8px 14px rgba(217,75,110,.4));animation:beat 1.4s infinite;user-select:none}
+#heart:active{transform:scale(.85)}
+#bq{width:min(340px,88vw);height:auto;overflow:visible}
+.bloom{transform-box:fill-box;transform-origin:center;transform:scale(0);animation:bl 1.3s cubic-bezier(.2,1.5,.4,1) forwards;animation-delay:var(--d)}
+@keyframes bl{to{transform:scale(1)}}
+.stem{stroke-dasharray:400;stroke-dashoffset:400;animation:gr 1.2s ease-out forwards;animation-delay:var(--d,0s)}
+@keyframes gr{to{stroke-dashoffset:0}}
+.sway{transform-origin:150px 330px;animation:sw 5s ease-in-out infinite 3s}
+@keyframes sw{50%{transform:rotate(1.6deg)}}
+#gift{position:relative;width:130px;height:130px;margin:6px auto 8px;cursor:pointer;animation:beat 2s infinite}
+#gift.open{animation:none}
+.gb{position:absolute;bottom:0;width:130px;height:84px;border-radius:6px 6px 12px 12px;background:linear-gradient(135deg,#ef7d98,var(--deep))}
+.gb:after,.gl:after{content:"";position:absolute;top:0;bottom:0;left:50%;width:20px;margin-left:-10px;background:linear-gradient(var(--gold),#e8cf8a)}
+.gl{position:absolute;top:8px;left:-7px;width:144px;height:50px;border-radius:8px;background:linear-gradient(135deg,#f58aa5,#e0587a);transition:transform .8s cubic-bezier(.3,1.4,.5,1);z-index:2}
+.gl:before{content:"🎀";position:absolute;top:-30px;left:50%;transform:translateX(-50%);font-size:2.4rem;z-index:3}
+#gift.open .gl{transform:translate(40px,-70px) rotate(24deg)}
+#gift.open{animation:none}
+#letter{display:none;margin-top:10px;max-width:460px;width:100%;padding:30px 24px;border-radius:26px;background:linear-gradient(#fffdf8,#fff3e3);border:1px solid var(--gold);
+box-shadow:0 20px 60px rgba(107,35,64,.2);text-align:right}
+#letter.show{display:block;animation:fin 1s ease both}
+#letter h2{font-size:1.7rem;margin-bottom:10px}
+#lt{white-space:pre-line;font-family:'Aref Ruqaa','Tajawal',serif;font-size:1.28rem;line-height:2.1;margin-bottom:12px}
+.sig{font-family:'Aref Ruqaa',serif;font-size:1.3rem;color:var(--gold);text-align:left;margin-bottom:18px}
+#snd{position:fixed;z-index:30;top:max(14px,env(safe-area-inset-top));inset-inline-start:14px;width:44px;height:44px;border-radius:50%;border:1px solid var(--gold);background:rgba(255,255,255,.75);font-size:1.2rem;cursor:pointer}
+.pt{position:fixed;top:-30px;z-index:15;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translate(var(--dx),110vh) rotate(var(--r))}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-iteration-count:1!important}}
+
+.dates{display:flex;gap:8px;margin:6px 0 14px}
+.dates select{flex:1;min-width:0;font:500 1rem 'Tajawal',sans-serif;color:var(--wine);background:#fff;border:1px solid var(--rose);border-radius:14px;padding:11px 6px}
+#bcard{display:none;margin:6px 0 14px;padding:18px;border-radius:20px;background:linear-gradient(#fffdf8,#fff0e0);border:1px solid var(--gold)}
+#bcard.on{display:block;animation:fin .8s both}
+#bcard .dt{font-family:'Aref Ruqaa',serif;font-size:1.5rem;color:var(--deep)}
+#bcard p{font-size:1.02rem;margin:8px 0 0}
+.btn.locked{background:#d9c9cc;box-shadow:none;opacity:.75;cursor:not-allowed;animation:none}
+.btn.locked:before{content:"🔒 "}
+.shake{animation:shk .5s}
+@keyframes shk{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.tw{animation:tw 1.8s infinite}@keyframes tw{50%{opacity:.15}}
+.gb{box-shadow:inset -26px 0 0 rgba(0,0,0,.13),inset 0 -14px 0 rgba(0,0,0,.08),0 18px 22px rgba(107,35,64,.28)}
+.gl{box-shadow:inset -26px 0 0 rgba(0,0,0,.12),0 8px 10px rgba(107,35,64,.25)}
+#gift.open:before{content:"";position:absolute;inset:-50px;background:radial-gradient(circle,rgba(255,226,150,.95),transparent 62%);animation:fin 1.2s both}
+#ial{font-size:.95rem;color:var(--wine)}
+html{-webkit-text-size-adjust:100%}
+.btn,.opt,#heart,#gift,#snd{touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.screen{padding:max(24px,env(safe-area-inset-top)) 16px max(24px,env(safe-area-inset-bottom))}
+.btn{min-height:50px}.opt{min-height:52px}
+#heart{min-width:120px;min-height:120px}
+@media(max-width:480px){h1{font-size:1.9rem}h2{font-size:1.5rem}p{font-size:1.02rem}.card{padding:26px 18px}#lt{font-size:1.15rem}}
+.pr{font-size:1rem;margin:10px 0 0;padding:10px 14px;border-radius:14px;background:#fff;border:1px dashed var(--gold);text-align:right;animation:fin .6s both}
+#cf{line-height:1.6;padding:14px 18px}
+#rsm{display:none;margin:0;font-weight:700;font-size:1.15rem;animation:fin .8s both}
+#letter small{font-size:.92rem;opacity:.85}
+input[type=range]{width:100%;height:40px;accent-color:var(--deep);margin:14px 0 6px}
+#sr{display:none;margin:16px 0;padding:16px;border-radius:18px;background:#fffdf8;border:1px solid var(--gold);font-family:'Aref Ruqaa',serif;font-size:1.25rem;line-height:2}
+#sr.on{display:block;animation:fin .8s both}
+#wed{display:none;margin-top:26px;width:100%;max-width:460px;text-align:center}
+#wed.on{display:block;animation:fin 1s both}
+#wc,#ac{position:relative;padding:36px 20px 26px;border-radius:20px;background:linear-gradient(#fffdf7,#fdeee6);border:2px solid #c9a24b;box-shadow:inset 0 0 0 7px #fffaf3,inset 0 0 0 9px rgba(201,162,75,.75);color:#6b2340}
+#wc .c,#ac .c{position:absolute;font-size:1.5rem}.c1{top:12px;right:14px}.c2{top:12px;left:14px}.c3{bottom:12px;right:14px}.c4{bottom:12px;left:14px}
+#wc .orn,#ac .orn{color:#c9a24b;letter-spacing:8px;font-size:1.1rem}
+#wc .wt,#ac .wt{font-family:'Aref Ruqaa',serif;font-size:1.65rem;margin:8px 0 10px;line-height:1.7}
+#wc p,#ac p{font-size:1.05rem;margin:0 0 12px}
+#wdt{font-family:'Aref Ruqaa',serif;font-size:1.5rem;color:#d94b6e;margin:6px 0 12px}
+#wc.snap .dsel{display:none}
+.pv{display:none;width:100%;border-radius:14px;margin-top:12px}
+.ar{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed rgba(201,162,75,.65);font-size:1rem;text-align:right}
+.ar b{color:#d94b6e;font-weight:700;text-align:left}
+#fin{display:none;margin-top:28px;padding:24px 18px;border-radius:24px;background:rgba(255,255,255,.7);border:1px solid var(--gold);box-shadow:0 14px 40px rgba(217,75,110,.18)}
+#wed.on #fin{display:block}
+#fin p{font-size:1.12rem;margin-bottom:16px}
+#md{position:fixed;inset:0;z-index:40;background:rgba(60,15,35,.82);display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:18px;text-align:center}
+#md.on{display:flex}
+#md img{max-width:100%;max-height:60dvh;border-radius:14px;background:#fffaf3;-webkit-touch-callout:default;-webkit-user-select:auto;user-select:auto}
+#md p{color:#fff;font-size:1.05rem;margin:0}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+</head>
+<body>
+<div id="fx"></div>
+<button id="snd" aria-label="الموسيقى">🎵</button>
+<div id="toast"></div>
+
+<!-- Step 1 -->
+<section class="screen active" id="s0"><div class="card">
+<span class="big">💌</span>
+<h1>مرحباً بك يا أجمل ريهام في العالم ✨</h1>
+<p>هاد المساحة صوبها ليك سهيل بـكل حب ❤️</p>
+<button class="btn glow" id="go">بداي التحدي والمفاجأة ✨</button>
+</div></section>
+
+<!-- Q1 -->
+<section class="screen" id="s1"><div class="card">
+<h2>شكون كيبغي لاخور كتر، سهيل ولا ريهام؟ 🤔</h2>
+<div class="row"><button class="btn alt" id="you">سهيل</button><button class="btn" id="dodge">أنا</button></div>
+</div></section>
+
+<!-- Challenge -->
+<section class="screen" id="sc"><div class="card">
+<span class="big">🕵️</span>
+<h2>التحدي الكبير: واش سهيل رومانسي ولا لا؟ 🤔</h2>
+<p>وقيلة ديما كتقولي لسهيل بلي راه ماشي رومانسي؟ واعر هاد التحدي! اختاري دابا بصراحة وشوفي واش سهيل رومانسي ولا لا 🤔</p>
+<div class="opts" id="co">
+<button class="opt" data-k="a">لا، مافيهاش شك، ماشي رومانسي نهائياً 🙄</button>
+<button class="opt" data-k="b">ممم.. يقدر يكون شي شوية؟ 🤷‍♂️</button>
+<button class="btn glow" id="cf" style="display:none">صافي اقتنعت، سهيل ملك الرومانسية وأحن إنسان ❤️✨</button>
+</div>
+<div id="proofs"></div>
+</div></section>
+
+<!-- Girls challenge -->
+<section class="screen" id="sg"><div class="card">
+<span class="big">🌹</span>
+<h2>تحدي البنات والجمال 🤨</h2>
+<p>وقيلة قلتي لسهيل بلي "كاع البنات زوينات"؟ سهيل عندو جواب… شحال موافقة معاه؟ حركي السهم 👇</p>
+<input type="range" id="sl" min="0" max="100" value="0" aria-label="شحال موافقة">
+<strong id="sv">ما موافقاش 😤</strong>
+<div id="sr">لا لا، ماشي كاع البنات زوينات.. كاينين بزاف، ولكن أنت بوحدك اللي استثناء وعالم آخر بوحدك! 🌹✨</div>
+<button class="btn glow" id="sx" style="display:none">موافقة 100% 💕</button>
+</div></section>
+
+<!-- Dates quiz -->
+<section class="screen" id="sq"><div class="card">
+<span class="big">🧠</span>
+<h2>تحدي التواريخ والذكريات</h2>
+<p id="qt"></p>
+<div class="dates"><select id="qd" aria-label="النهار"><option value="">النهار</option></select><select id="qm" aria-label="الشهر"><option value="">الشهر</option></select><select id="qy" aria-label="السنة"><option value="">السنة</option></select></div>
+<p id="qf" style="color:#b02a50;min-height:1.8em;margin:4px 0 12px;font-size:1rem"></p>
+<button class="btn" id="qn">تأكيد ✅</button>
+</div></section>
+
+<!-- Q2 -->
+<section class="screen" id="s2"><div class="card">
+<h2>شنو أحسن حاجة فعلاقتنا؟ 💭</h2>
+<div class="opts">
+<button class="opt" data-n="ضحكتك هي أحسن موسيقى فحياتي، وسهيل محظوظ بزاف باللي عندو ريهام كتضحكو كل نهار 😂❤️">الضحك ديالنا 😂</button>
+<button class="opt" data-n="سهيل محظوظ بزاف حيت لقا فريهام الإنسانة اللي كيهضر معاها على كلشي بلا ما يتعيا 💬">الهضرة اللي ما كتسالاش 💬</button>
+<button class="opt" data-n="حنانك ودعمك هوما قوتي، وسهيل كيشكر ربي كل نهار باللي ريهام فحياتو 🤍">الحنان والدعم 🤍</button>
+<button class="opt" data-n="كل ذكرى معاك هي كنز عند سهيل، ومحظوظ بزاف باللي عندو ريهام تشاركو هاد اللحظات ✨">الذكريات الزوينين ✨</button>
+</div>
+<button class="btn" id="n2" style="display:none;margin-top:20px">الموالي 💕</button>
+</div></section>
+
+<!-- Q3 -->
+<section class="screen" id="s3"><div class="card">
+<h2>عمري ميتر الحب ديالنا 💗</h2>
+<p>ضغطي على القلب 5 مرات باش يتعمر الحب حتى لـ 100%</p>
+<div class="meter"><div id="fill"></div></div>
+<strong id="pct">0%</strong>
+<div><button id="heart" aria-label="قلب">❤️</button></div>
+</div></section>
+
+<!-- Birthday unlock -->
+<section class="screen" id="sb"><div class="card">
+<span class="big">🎂</span>
+<h2>وأخيراً، باش نوجد ليك المفاجأة الكبيرة، دخلي تاريخ ميلادك هنا 🎂🎁</h2>
+<p style="margin-bottom:12px">اختاري النهار والشهر (والسنة إيلا بغيتي)</p>
+<div class="dates">
+<select id="bd" aria-label="النهار"><option value="">النهار</option></select>
+<select id="bm" aria-label="الشهر"><option value="">الشهر</option></select>
+<select id="by" aria-label="السنة"><option value="">السنة (اختياري)</option></select>
+</div>
+<div id="bcard"></div>
+<p id="bhint" style="color:#b02a50;min-height:1.8em;margin:4px 0 12px;font-size:1rem"></p>
+<button class="btn locked" id="unlock" aria-disabled="true">فتحي الهدية 🎁</button>
+</div></section>
+
+<!-- Finale -->
+<section class="screen" id="s4">
+<h2 id="ft" style="margin-bottom:0">هاد الورد ليك نتي 🌹</h2>
+<svg id="bq" viewBox="0 0 300 340" aria-hidden="true">
+<defs>
+<g id="rose"><circle r="46" fill="#d94b6e"/><path d="M-40-10C-30-45 30-45 40-10C35 30-35 30-40-10Z" fill="#e8708f"/><circle r="30" fill="#c93a60"/><path d="M-24 0C-20-28 22-28 24 0C18 22-18 22-24 0Z" fill="#f08aa5"/><circle r="16" fill="#b02a50"/><path d="M-8-2C-6-14 10-12 9 0C6 10-8 8-8-2Z" fill="#e0607f"/><path d="M-14 0a14 14 0 1 1 14 14" fill="none" stroke="#8f1f40" stroke-width="2" stroke-linecap="round"/></g>
+<g id="dz"><g fill="#fff"><ellipse cy="-26" rx="9" ry="20"/><ellipse cy="-26" rx="9" ry="20" transform="rotate(45)"/><ellipse cy="-26" rx="9" ry="20" transform="rotate(90)"/><ellipse cy="-26" rx="9" ry="20" transform="rotate(135)"/><ellipse cy="-26" rx="9" ry="20" transform="rotate(180)"/><ellipse cy="-26" rx="9" ry="20" transform="rotate(225)"/><ellipse cy="-26" rx="9" ry="20" transform="rotate(270)"/><ellipse cy="-26" rx="9" ry="20" transform="rotate(315)"/></g><circle r="12" fill="#e9bf55"/></g>
+<g id="rose2"><circle r="46" fill="#f08aa5"/><path d="M-40-10C-30-45 30-45 40-10C35 30-35 30-40-10Z" fill="#f7a8bd"/><circle r="30" fill="#ee7595"/><path d="M-24 0C-20-28 22-28 24 0C18 22-18 22-24 0Z" fill="#fcc3d2"/><circle r="16" fill="#e0587a"/><path d="M-8-2C-6-14 10-12 9 0C6 10-8 8-8-2Z" fill="#f59ab3"/><path d="M-14 0a14 14 0 1 1 14 14" fill="none" stroke="#c2406a" stroke-width="2" stroke-linecap="round"/></g>
+<g id="lf"><path d="M0 0C10-15 32-15 42 0C32 15 10 15 0 0Z" fill="#5f9f68"/><path d="M2 0H38" stroke="#9bd1a0" stroke-width="1.5"/></g>
+</defs>
+<g class="sway" id="bg"></g>
+<path d="M80 250L220 250L170 338L130 338Z" fill="#f6dcc0" stroke="#c9a24b" stroke-width="2"/>
+<path d="M80 250L150 290L220 250" fill="none" stroke="#c9a24b" stroke-width="2"/>
+<path d="M146 300L132 332M154 300L168 332" stroke="#d94b6e" stroke-width="4" stroke-linecap="round"/>
+<path d="M150 293C120 270 106 302 128 308C140 310 148 300 150 293C152 300 160 310 172 308C194 302 180 270 150 293Z" fill="#d94b6e" stroke="#b02a50"/>
+<circle cx="150" cy="294" r="7" fill="#c9a24b"/>
+</svg>
+<p id="hint" style="margin:0">وحلا الهدية 🎁 ضغطي عليها باش تفتحيها</p>
+<div id="gift"><div class="gb"></div><div class="gl"></div></div>
+<div id="letter">
+<div id="lt" style="margin-bottom:0"></div>
+<div style="text-align:center;margin-top:24px"><button class="btn glow" id="wn">كملي… فيه مفاجأة أخيرة 💍</button></div>
+</div>
+<div id="wed">
+<div id="wc">
+<span class="c c1">🌹</span><span class="c c2">🌹</span><span class="c c3">🌸</span><span class="c c4">🌸</span>
+<div class="orn">❀ ✦ ❀</div>
+<h2 class="wt">دعوة حضور حفل زفاف سهيل وريهام 💍✨</h2>
+<p>ييسر لنا الله، وندعوكم لنحتفل بأجمل قصة حب تجمع بين سهيل وريهام، فنهار:</p>
+<div class="dates dsel"><select id="wd" aria-label="النهار"><option value="">النهار</option></select><select id="wm" aria-label="الشهر"><option value="">الشهر</option></select><select id="wy" aria-label="السنة"><option value="">السنة</option></select></div>
+<div id="wdt">📅 اختاري التاريخ ⬆️</div>
+<p style="margin:0">بكل حب ❤️ سهيل وريهام</p>
+<div class="orn">❀ ✦ ❀</div>
+</div>
+<p id="wh" style="color:#b02a50;min-height:1.8em;margin:10px 0 6px"></p>
+<button class="btn locked" id="d1" aria-disabled="true">تنزيل بطاقة الزفاف كصورة 📥</button>
+<div id="ac" style="margin-top:32px">
+<span class="c c1">🌹</span><span class="c c2">🌹</span><span class="c c3">🌸</span><span class="c c4">🌸</span>
+<div class="orn">❀ ✦ ❀</div>
+<h2 class="wt">ملخص الإجابات والذكريات 💌</h2>
+<div id="ar"></div>
+<p style="margin:12px 0 0">ريهام ❤️ سهيل</p>
+<div class="orn">❀ ✦ ❀</div>
+</div>
+<button class="btn" id="d2" style="margin-top:16px">تنزيل بطاقة الإجابات والذكريات كصورة 📥</button>
+<div id="fin">
+<p>ألف مبروك! كملتي التحدي بنجاح 💖 دابا ديري تنزيل للصور بجوج (بطاقة الزفاف + ملخص الإجابات)، وصيفطيهم بجوج لسهيل في الإنستغرام (<span id="igu"></span>) باش تشوفو شكون لي ربح التحدي! 😉💌</p>
+<a class="btn alt" id="igl" href="#" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none">فتحي إنستغرام سهيل 💌</a>
+</div>
+</div>
+</section>
+
+<div id="md" role="dialog" aria-modal="true">
+<img id="mi" alt="الصورة">
+<p>ضغطي مطولاً على الصورة واختاري (Add to Photos) باش تتخزن في الاستوديو 📱</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><button class="btn" id="ms">مشاركة / حفظ 📤</button><button class="btn alt" id="mc">سد</button></div>
+</div>
+
+<script>
+/* ==========================================================
+   ✏️✏️  هنا حط اسم حسابك فإنستغرام (بلا @)  ✏️✏️
+   PUT YOUR INSTAGRAM USERNAME BELOW (without the @)
+   ========================================================== */
+const INSTAGRAM_USERNAME = "souhail_toutou";   // احتياطي: إيلا الإرسال التلقائي ما خدمش
+
+/* (اختياري) إيلا بغيتي الموقع يقول ليها "برافو/غلطتي" فتحدي التواريخ، دخل التواريخ الصحيحة هنا بصيغة "نهار/شهر" ولا "نهار/شهر/عام".
+   إيلا خليتيهم خاويين، كيقبل أي جواب وكيتصيفط ليك مع الرسالة باش تشوف نتا. */
+const MEET_DATE    = "";   // أول نهار تعرفتو فيه، مثال: "14/2/2024"
+const HIS_BIRTHDAY = "";   // عيد ميلادك، مثال: "20/7"
+/* ====== ✏️ CUSTOMIZE HERE / بدلي هنا ====== */
+const LETTER =
+`إلى ريهام الغالية،
+
+بغيت نكول ليك بلي وجودك في حياتي هو أجمل صدفة وأحسن حاجة وقعات ليا. شكرا حيت ديما منورة أيامي بابتسامتك وقلبك الطيب. هاد الموقع درتو غير باش نرسم ابتسامة على وجهك ونفكرك شحال غالية عليا.
+
+محبتي ودائماً معاك،
+سهيل 🌹`;
+/* ======================================== */
+
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const rnd=(a,b)=>a+Math.random()*(b-a);
+function show(id){$$('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');scrollTo(0,0)}
+
+/* floating hearts */
+const fx=$('#fx');
+setInterval(()=>{const h=document.createElement('span');h.className='fh';h.textContent=['♥','✦','♡','✧'][Math.floor(rnd(0,4))];
+h.style.cssText=`left:${rnd(0,100)}%;font-size:${rnd(12,28)}px;animation-duration:${rnd(7,13)}s;color:${Math.random()>.7?'#c9a24b':'#d94b6e'}`;
+fx.appendChild(h);setTimeout(()=>h.remove(),13500)},700);
+
+/* synth music (Web Audio) */
+let ac,timer,playing=false,step=0;
+const chords=[[220,261.63,329.63],[174.61,220,261.63],[261.63,329.63,392],[196,246.94,293.66]];
+const pat=[0,1,2,1,2,1,0,2];
+function tone(f,t,d,v,type){const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;
+g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.04);g.gain.exponentialRampToValueAtTime(.0001,t+d);
+o.connect(g).connect(ac.destination);o.start(t);o.stop(t+d+.05)}
+function tick(){const c=chords[Math.floor(step/8)%4],t=ac.currentTime+.05;
+if(step%8===0)tone(c[0]/2,t,3,.07,'sine');
+tone(c[pat[step%8]]*2,t,1.4,.05,'triangle');step++}
+function music(on){if(on){ac=ac||new (window.AudioContext||window.webkitAudioContext)();ac.resume();if(!timer)timer=setInterval(tick,430);playing=true;$('#snd').textContent='🎵'}
+else{clearInterval(timer);timer=null;playing=false;$('#snd').textContent='🔇'}}
+$('#snd').onclick=()=>music(!playing);
+
+/* petals & confetti */
+function petals(n,confetti){n=innerWidth<500?Math.ceil(n*.6):n;for(let i=0;i<n;i++){const p=document.createElement('i');p.className='pt';
+const c=['#f58aa5','#d94b6e','#fbc4d0','#c9a24b','#fff'][Math.floor(rnd(0,5))];
+if(confetti)p.style.cssText=`width:8px;height:13px;background:${c};`;
+else p.style.cssText=`width:14px;height:18px;border-radius:150% 0 150% 0;background:${c};`;
+p.style.left=rnd(0,100)+'vw';p.style.setProperty('--dx',rnd(-120,120)+'px');p.style.setProperty('--r',rnd(200,900)+'deg');
+p.style.animationDuration=rnd(3.5,7)+'s';p.style.animationDelay=rnd(0,2)+'s';
+document.body.appendChild(p);setTimeout(()=>p.remove(),10000)}}
+
+/* toast */
+let tt;function toast(m,ms=2400){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),ms)}
+$('#toast').onclick=()=>$('#toast').classList.remove('on');
+
+/* Step 1 */
+$('#go').onclick=()=>{music(true);show('#s1')};
+
+/* Q1 */
+let dodges=0;const dg=$('#dodge');
+function dodge(){if(dodges>=3)return;dodges++;dg.style.transform=`translate(${rnd(-90,90)}px,${rnd(-70,70)}px) rotate(${rnd(-12,12)}deg)`;
+if(dodges>=3){setTimeout(()=>{dg.style.transform='none';dg.textContent='بجوجنا، ولكن سهيل كيبغيك كتر ❤️'},300)}}
+dg.addEventListener('pointerenter',dodge);dg.addEventListener('pointerdown',e=>{if(dodges<3){e.preventDefault();dodge()}});
+dg.onclick=()=>{if(dodges<3){dodge();return}petals(14);setTimeout(()=>show('#sc'),500)};
+$('#you').onclick=()=>{toast('ههه زوينة! 😄 بجوجنا، ولكن سهيل كيبغيك كتر ❤️',3000);setTimeout(()=>show('#sc'),1800)};
+
+/* Q2 */
+$$('#s2 .opt').forEach(b=>b.onclick=()=>{A2.add(b.textContent);toast(b.dataset.n,4200);$('#n2').style.display='inline-block'});
+$('#n2').onclick=()=>show('#s3');
+
+/* Q3 */
+let taps=0;
+$('#heart').onclick=e=>{taps++;const p=taps*20;$('#fill').style.width=p+'%';$('#pct').textContent=p+'%';
+const r=e.currentTarget.getBoundingClientRect(),f=document.createElement('span');f.className='fh';f.textContent='💗';
+f.style.cssText=`position:fixed;left:${r.left+r.width/2}px;top:${r.top}px;bottom:auto;font-size:30px;animation-duration:3s`;document.body.appendChild(f);setTimeout(()=>f.remove(),3200);
+if(taps===5){$('#pct').textContent='100% 😍';setTimeout(()=>{showQ();show('#sq')},1200)}};
+
+/* Challenge */
+const C=new Set();
+const TEASE={a:'خطأ مطبعي خطير! 🚨 السيستم رفض هاد الاختيار حيت الكاميرا كتشوف بلي سهيل غارقك فالرومانسية دابا! 😂 جربي الاختيار الصحيح عافاك',
+b:'ممم؟ 🤨 "شي شوية"؟! السيستم كيقول بلي نسبة الكذب فهاد الجواب 87% 😂 شوفي الأدلة وجربي من جديد'};
+const PROOF={a:'📌 الدليل 1: صاوب ليك موقع كامل بالورد والموسيقى… وهادشي ماشي رومانسية؟ 🌹',b:'📌 الدليل 2: كتب ليك رسالة من قلبو وبقا كيفكر فيك فكل تفصيلة فهاد المفاجأة 💌'};
+$$('#co .opt').forEach(b=>b.onclick=()=>{C.add(b.dataset.k);toast(TEASE[b.dataset.k],4500);b.style.display='none';
+const d=document.createElement('p');d.className='pr';d.textContent=PROOF[b.dataset.k];$('#proofs').appendChild(d);$('#cf').style.display='block'});
+$('#cf').onclick=()=>{petals(60,true);petals(25);toast('هههه عرفتها! 😍 تسجل رسميا: سهيل ملك الرومانسية 👑❤️',2600);setTimeout(()=>show('#sg'),2500)};
+
+/* Girls challenge */
+const SL=$('#sl');let slDone=false;
+SL.oninput=()=>{let v=+SL.value;const t=$('#sv');
+if(v>=95){SL.value=100;t.textContent='100% 😍';$('#sr').classList.add('on');$('#sx').style.display='inline-block';if(!slDone){slDone=true;petals(15,true)}return}
+t.textContent=v<25?'ما موافقاش 😤':v<60?'ممم… بدات كنفكر 🤔':'قريب… زيدي شوية 🥰'};
+$('#sx').onclick=()=>show('#s2');
+
+/* Dates quiz */
+const QZ=[{t:'أتحدى ذاكرتك! عقلتي على أول نهار تعرفنا فيه أنا وياك؟ 📅',cfg:MEET_DATE,from:new Date().getFullYear(),to:2012,k:'meet'},
+{t:'وملي هضرتي على عيد الميلاد، دابا وريني شحال عاقلة على عيد ميلاد سهيل (أنا)؟ 🎂',cfg:HIS_BIRTHDAY,from:2012,to:1985,k:'his'}];
+let qi=0,tr=0;const QA={};
+const fmt=r=>r.d+'/'+r.m+(r.y?'/'+r.y:'');
+const chk=(c,r)=>{if(!c)return null;const q=c.split('/').map(Number);return q[0]===r.d&&q[1]===r.m&&(!q[2]||!r.y||q[2]===r.y)};
+function showQ(){const q=QZ[qi];$('#qt').textContent=q.t;fillSel($('#qd'),$('#qm'),$('#qy'),q.from,q.to);$('#qf').textContent='';tr=0}
+$('#qn').onclick=()=>{const q=QZ[qi],r=rd('#qd','#qm','#qy'),f=$('#qf');
+if(!r){f.textContent='اختاري النهار والشهر الأول 🙈';return}
+if(r.bad){f.textContent='هاد الشهر ما فيهش هاد النهار 😄';return}
+const ok=chk(q.cfg,r);
+if(ok===false&&tr<1){tr++;toast('ههه لا! 😂 قريبة… جربي مرة أخرى 🙈',2500);return}
+QA[q.k]=fmt(r);
+toast(ok===true?'برافو! 😍 عاقلة عليها… سهيل فرحان!':ok===false?'غير نسمحو ليك هاد المرة 😘':'تسجلات! سهيل غادي يشوف واش صح 😏',2000);
+setTimeout(()=>{if(++qi<QZ.length)showQ();else show('#sb')},1500)};
+
+/* Birthday */
+const A2=new Set();let B=null;
+const MONTHS=['يناير','فبراير','مارس','أبريل','ماي','يونيو','يوليوز','غشت','شتنبر','أكتوبر','نونبر','دجنبر'];
+const CUT=[20,19,21,20,21,21,23,23,23,23,22,22];
+const ZS=[['الدلو','🌊','دايما مبدعة ومختلفة، وقلبها كبير وكتنور بخصوصيتها'],['الحوت','🐟','حساسة وحنينة وعندها خيال زوين، وقلبها صافي بحال البحر'],['الحمل','🔥','قوية وشجاعة وطاقتها كتعدي لكل اللي حواليها'],['الثور','🌿','وفية ومخلصة وحنينة، وكتعرف كيفاش تبقى ثابتة فالحب'],['الجوزاء','💫','ذكية وخفيفة الضل، وبضحكتها كتنور المجلس كامل'],['السرطان','🌙','قلبها طيب وكتحمي اللي كتبغي بحنان ما عندو مثيل'],['الأسد','👑','ملكة بالفطرة، ثقتها فراسها وحضورها كيبهر كل من شافها'],['العذراء','🌸','راقية ومرتبة وحنينة، وكتعطي بلا حساب'],['الميزان','⚖️','كتحب الجمال والسلام، وذوقها وروحها كيخليو الدنيا أزين'],['العقرب','✨','قوية وعميقة وغامضة، وفحبها صادقة وكتبقى للآخر'],['القوس','🏹','مرحة ومغامرة وروحها حرة، وكتنشر الفرحة فين ما مشات'],['الجدي','🏔️','مثابرة وناضجة، وتحت هيبتها قلب كبير']];
+const zodiac=(m,d)=>ZS[d>=CUT[m-1]?m-1:(m+10)%12];
+(()=>{const bd=$('#bd'),bm=$('#bm'),by=$('#by');
+for(let i=1;i<=31;i++)bd.add(new Option(i,i));
+MONTHS.forEach((n,i)=>bm.add(new Option(n,i+1)));
+for(let y=new Date().getFullYear();y>=1960;y--)by.add(new Option(y,y));
+[bd,bm,by].forEach(e=>e.onchange=upd)})();
+function rd(D,M,Y,needY){const d=+$(D).value,m=+$(M).value,y=+$(Y).value;if(!d||!m||(needY&&!y))return null;
+const leap=y%4===0&&(y%100!==0||y%400===0);const dim=[31,y&&!leap?28:29,31,30,31,30,31,31,30,31,30,31];
+return d>dim[m-1]?{bad:1}:{d,m,y}}
+const bday=()=>rd('#bd','#bm','#by');
+function fillSel(d,m,y,from,to){d.length=1;m.length=1;y.length=1;for(let i=1;i<=31;i++)d.add(new Option(i,i));
+MONTHS.forEach((n,i)=>m.add(new Option(n,i+1)));const st=from>to?-1:1;for(let v=from;v!==to+st;v+=st)y.add(new Option(v,v))}
+function upd(){const b=bday(),btn=$('#unlock'),c=$('#bcard');$('#bhint').textContent='';
+if(b&&!b.bad){B=b;btn.classList.remove('locked');btn.classList.add('glow');btn.setAttribute('aria-disabled','false');
+const z=zodiac(b.m,b.d);
+c.innerHTML=`<div class="dt">🎂 ${b.d} ${MONTHS[b.m-1]}${b.y?' '+b.y:''}</div><p>هذا هو أحسن نهار تزاد فيه أجمل إنسانة فالدنيا، نهار تزادتي نتي تزاد معاك النور والفرحة فحياتي 🎂❤️</p><p>ونهارك هو أحسن نهار فالعام كامل 🎉</p><p>${z[1]} برج ${z[0]}: ${z[2]} 💕</p>`;c.classList.add('on')}
+else{B=null;btn.classList.add('locked');btn.classList.remove('glow');btn.setAttribute('aria-disabled','true');c.classList.remove('on');
+if(b&&b.bad)$('#bhint').textContent='هاد الشهر ما فيهش هاد النهار 😄 تأكدي من التاريخ'}}
+$('#unlock').onclick=()=>{if(!B){$('#bhint').textContent='ههه ما بغيتيش تقولي ليا؟ 🙈 دخلي النهار والشهر باش تتفتح الهدية ❤️';
+const b=$('#unlock');b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');return}
+petals(20,true);setTimeout(finale,500)};
+
+/* Wedding card + summary card (PNG export) */
+const igUser=()=>INSTAGRAM_USERNAME.replace('@','').trim();
+$('#igu').textContent='@'+igUser();$('#igl').href='https://ig.me/m/'+igUser();
+let W=null;
+const wstr=()=>W?`${W.d} ${MONTHS[W.m-1]} ${W.y}`:'';
+const dstr=r=>r?`${r.d} ${MONTHS[r.m-1]}${r.y?' '+r.y:''}`:'-';
+const qstr=v=>{if(!v)return'-';const p=v.split('/').map(Number);return dstr({d:p[0],m:p[1],y:p[2]})};
+(()=>{const Y=new Date().getFullYear();fillSel($('#wd'),$('#wm'),$('#wy'),Y,Y+12);
+[$('#wd'),$('#wm'),$('#wy')].forEach(e=>e.onchange=wupd)})();
+function wupd(){const r=rd('#wd','#wm','#wy',true),b=$('#d1');$('#wh').textContent='';
+if(r&&!r.bad){W=r;$('#wdt').textContent='📅 '+wstr();b.classList.remove('locked');b.classList.add('glow');b.setAttribute('aria-disabled','false')}
+else{W=null;$('#wdt').textContent='📅 اختاري التاريخ ⬆️';b.classList.add('locked');b.classList.remove('glow');b.setAttribute('aria-disabled','true');
+if(r&&r.bad)$('#wh').textContent='هاد الشهر ما فيهش هاد النهار 😄'};sched()}
+function fillSummary(){const rows=[['👑 تحدي الرومانسية','سهيل ملك الرومانسية'],['🌹 تحدي البنات','موافقة 100%'],['💭 أحسن حاجة فعلاقتنا',[...A2].join('، ')||'كلشي'],
+['📅 أول نهار تعرفنا فيه',qstr(QA.meet)],['🎂 عيد ميلاد سهيل',qstr(QA.his)],['🎁 عيد ميلادها',dstr(B)],['💗 ميتر الحب','100%'],['💍 تاريخ الزفاف',W?wstr():'-']];
+$('#ar').innerHTML=rows.map(r=>`<div class="ar"><span>${r[0]}</span><b>${r[1]}</b></div>`).join('')}
+$('#wn').onclick=()=>{$('#wn').style.display='none';fillSummary();$('#wed').classList.add('on');petals(25,true);petals(15);$('#wed').scrollIntoView({behavior:'smooth',block:'start'});sched(1500)};
+const IMG={};let cur=null,stm;
+async function render(el,name){
+const cv=await html2canvas(el,{scale:2,backgroundColor:'#fffaf3',useCORS:true,onclone:d=>{const w=d.getElementById('wed');if(w){w.style.animation='none';w.style.opacity=1;w.style.transform='none'}const c=d.getElementById(el.id);if(c)c.classList.add('snap')}});
+const blob=await new Promise(r=>cv.toBlob(r,'image/png'));
+return{file:new File([blob],name,{type:'image/png'}),url:URL.createObjectURL(blob)}}
+/* pre-render in background so the share sheet can open instantly inside the tap (iOS needs this) */
+function sched(delay=700){clearTimeout(stm);IMG.w=null;IMG.a=null;
+stm=setTimeout(async()=>{if(!$('#wed').classList.contains('on'))return;fillSummary();
+try{if(W)IMG.w=await render($('#wc'),'wedding_invitation.png');IMG.a=await render($('#ac'),'answers_memories.png')}catch(e){}},delay)}
+const canShare=f=>!!(navigator.share&&navigator.canShare&&navigator.canShare({files:[f]}));
+const isIOS=()=>/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+function modal(it){cur=it;$('#mi').src=it.url;$('#ms').style.display=canShare(it.file)?'inline-block':'none';$('#md').classList.add('on')}
+$('#mc').onclick=()=>$('#md').classList.remove('on');
+$('#ms').onclick=async()=>{try{await navigator.share({files:[cur.file]})}catch(e){}};
+async function deliver(it){
+if(canShare(it.file)){try{await navigator.share({files:[it.file]});return}catch(e){if(e&&e.name==='AbortError')return}}
+if(!isIOS()){const a=document.createElement('a');a.href=it.url;a.download=it.file.name;document.body.appendChild(a);a.click();a.remove()}
+modal(it)}
+async function save(key,el,name,btn){if(btn.dataset.busy)return;btn.dataset.busy=1;
+try{let it=IMG[key];if(!it){toast('كنوجدو الصورة… ⏳',1800);it=await render(el,name);IMG[key]=it}await deliver(it)}
+catch(e){toast('ما قدرناش نصاوبو الصورة 🙈 دبري Screenshot وصيفطيها لسهيل',3500)}
+delete btn.dataset.busy}
+$('#d1').onclick=()=>{const b=$('#d1');
+if(!W){$('#wh').textContent='اختاري النهار والشهر والعام ديال الزفاف أولا 💍😄';b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');return}
+save('w',$('#wc'),'wedding_invitation.png',b)};
+$('#d2').onclick=()=>{if(!IMG.a)fillSummary();save('a',$('#ac'),'answers_memories.png',$('#d2'))};
+
+/* Bouquet */
+function bouquet(){let h='';const g=(c,d,x)=>`<g class="bloom" style="--d:${d}s">${x}</g>`;
+const dots=[];for(let i=0;i<18;i++){const t=Math.PI*(1.04+i/17*.92),r=118+(i%3)*12;dots.push([150+r*Math.cos(t),168+r*Math.sin(t)*.9])}
+dots.forEach(([x,y])=>h+=`<path d="M150 230Q${(150+x)/2} ${(230+y)/2} ${x} ${y}" stroke="#9bd1a0" stroke-width="1.2" fill="none"/>`);
+const F=[[150,58,.6,'rose2'],[92,86,.55,'dz'],[208,86,.55,'dz'],[58,126,.6,'rose2'],[242,126,.6,'rose2'],[108,118,.85,'rose'],[192,118,.85,'rose'],[78,182,.62,'rose'],[222,182,.62,'rose'],[150,148,1.05,'rose']];
+F.forEach(([x,y],i)=>h+=`<path class="stem" d="M150 322Q${(150+x)/2} ${(322+y)/2+25} ${x} ${y}" stroke="#5b9a61" stroke-width="4" stroke-linecap="round" fill="none" style="--d:${i*.12}s"/>`);
+[[140,262,205,1.3],[160,262,-25,1.3],[135,228,220,1.2],[165,228,-40,1.2],[128,192,235,1.1],[172,192,-55,1.1],[120,160,250,.9],[180,160,-70,.9]].forEach(([x,y,a,sc],i)=>h+=g(0,.4+i*.08,`<use href="#lf" transform="translate(${x},${y}) rotate(${a}) scale(${sc})"/>`));
+dots.forEach(([x,y],i)=>h+=g(0,2+i*.05,`<circle cx="${x}" cy="${y}" r="3.6" fill="#fff" stroke="#f7c6d0"/>`));
+F.forEach(([x,y,sc,t],i)=>h+=g(0,.8+i*.17,`<use href="#${t}" transform="translate(${x},${y}) scale(${sc})"/>`));
+for(let i=0;i<9;i++)h+=`<circle class="tw" cx="${30+i*30+(i%2)*8}" cy="${28+(i*37)%90}" r="2.2" fill="#e9bf55" style="animation-delay:${i*.25}s"/>`;
+$('#bg').innerHTML=h}
+
+/* Finale */
+function finale(){bouquet();show('#s4');petals(40,true);petals(30);
+let k=0;const iv=setInterval(()=>{petals(6);if(++k>8)clearInterval(iv)},1200)}
+$('#gift').onclick=()=>{const g=$('#gift');if(g.classList.contains('open'))return;g.classList.add('open');$('#hint').style.display='none';
+petals(30,true);
+$('#lt').textContent=LETTER;
+setTimeout(()=>{$('#letter').classList.add('show');$('#letter').scrollIntoView({behavior:'smooth',block:'center'})},700)};
+</script>
+</body>
+</html>
